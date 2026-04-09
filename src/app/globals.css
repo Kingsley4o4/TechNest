@@ -36,13 +36,16 @@ body {
 
 @custom-variant dark (&:is(.dark *));
 
-@theme {
+@theme inline {
   /* ── Colors: Backgrounds ────────────────────────────────── */
-  --color-bg-primary: #FFFFFF;
-  --color-bg-secondary: #F5F5F5;
-  --color-bg-dark: #1A1A1A;
-  --color-bg-darker: #2D2D2D;
+  --color-bg-primary: #ffffff;
+  --color-bg-secondary: #f5f5f5;
+  --color-bg-dark: #1a1a1a;
+  --color-bg-darker: #2d2d2d;
   --color-bg-footer: #232323;
+  --color-bg-hero: #211c24;
+  --color-bg-grycards: #353535;
+  --color-card: #ededed;
 
   /* ── Colors: Text ───────────────────────────────────────── */
   --color-text-primary: #000000;
@@ -52,24 +55,24 @@ body {
 
   /* ── Colors: Brand & UI ─────────────────────────────────── */
   --color-accent-primary: #000000;
-  --color-accent-border: #B5B5B5;
-  --color-wishlist-active: #FF0000;
-  --color-wishlist-inactive: #D9D9D9;
-  --color-tab-inactive: #B5B5B5;
-  --color-category-border: #E8E8E8;
+  --color-accent-border: #b5b5b5;
+  --color-wishlist-active: #ff0000;
+  --color-wishlist-inactive: #d9d9d9;
+  --color-tab-inactive: #b5b5b5;
+  --color-category-border: #e8e8e8;
 
   /* ── Typography: Sizes ──────────────────────────────────── */
-  --font-size-hero-label: 14px;
-  --font-size-hero-heading: 52px;
-  --font-size-hero-sub: 14px;
-  --font-size-section-title: 32px;
-  --font-size-card-title: 18px;
-  --font-size-product-name: 12px;
-  --font-size-product-price: 18px;
-  --font-size-product-brand: 11px;
-  --font-size-nav-link: 16px;
-  --font-size-button-text: 14px;
-  --font-size-category-text: 12px;
+  --text-hero-label: 14px;
+  --text-hero-heading: 52px;
+  --text-hero-sub: 14px;
+  --text-section-title: 32px;
+  --text-card-title: 18px;
+  --text-product-name: 12px;
+  --text-product-price: 18px;
+  --text-product-brand: 11px;
+  --text-nav-link: 16px;
+  --text-button: 14px;
+  --text-category: 12px;
 
   /* ── Spacing & Layout ───────────────────────────────────── */
   --spacing-page-x: 160px;
@@ -94,12 +97,14 @@ body {
 @layer base {
   body {
     @apply bg-background text-foreground;
-    font-family: 'Inter', sans-serif;
+    font-family: "Inter", sans-serif;
     -webkit-font-smoothing: antialiased;
   }
 
   /* Resetting headings to match your weights */
-  h1, h2, h3 {
+  h1,
+  h2,
+  h3 {
     @apply font-bold;
   }
   * {
@@ -157,7 +162,6 @@ body {
   --color-popover-foreground: var(--popover-foreground);
   --color-popover: var(--popover);
   --color-card-foreground: var(--card-foreground);
-  --color-card: var(--card);
   --color-foreground: var(--foreground);
   --color-background: var(--background);
   --radius-sm: calc(var(--radius) * 0.6);
@@ -171,6 +175,9 @@ body {
 /* 
 ---break---  */
 :root {
+  --text-category-size: 12px;
+  --text-category-weight: 100;
+
   --background: oklch(1 0 0);
   --foreground: oklch(0.145 0 0);
   --card: oklch(1 0 0);
