@@ -42,7 +42,7 @@ export const PRODUCTS_LIST = [
   {
     id: 1,
     name: "Apple iPhone 14 Pro Max 128GB Deep Purple",
-    image: "/assets/home/Iphone14Pro.png",
+    image: "/assets/home/Iphone14pro.png",
     price: 999,
   },
   {  id: 2,
