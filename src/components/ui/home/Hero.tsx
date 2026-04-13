@@ -2,16 +2,22 @@ import Image from "next/image";
 import ShopNowButton from "@/components/ui/shared/ShopNowButton";
 
 export default function Hero() {
-  const IPHONE17_IMG = (
-    <Image
+  const IPHONE17_IMG = { 
+   
+
+   
+   
+};
+
+  const HERO_IMGS = {
+     Hero: (
+       <Image
       src="/assets/home/iphoneImg.png"
       alt="iPhone 17 Pro"
       width={400}
       height={400}
     />
-  );
-
-  const HERO_IMGS = {
+  ),
     PlayStation: (
       <Image
         src="/assets/home/hero/PlayStation.png"
@@ -70,7 +76,7 @@ export default function Hero() {
             Created to change everything for the better. For everyone.
           </p>
           <ShopNowButton className="mt-6 mb-4">Shop Now</ShopNowButton>
-          <div className="mt-4">{IPHONE17_IMG}</div>
+          <div className="mt-4">{HERO_IMGS.Hero}</div>
         </div>
 
         {/* Desktop */}
@@ -87,7 +93,7 @@ export default function Hero() {
             </p>
             <ShopNowButton>Shop Now</ShopNowButton>
           </div>
-          <div>{IPHONE17_IMG}</div>
+          <div>{HERO_IMGS.Hero}</div>
         </div>
       </div>
 
