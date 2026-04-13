@@ -3,9 +3,8 @@ import {useState} from "react"
 import NewProductArrival from "./NewProductArrival"
 
 export default function ProductLists (){
-    const [active, setActive] = useState(null)
+    const [active, setActive] = useState<boolean | null>(null)
 
-   
     return (
         <div>
             <main  className="lg:mx-page-x mx-page-x-mobile mt-14">
@@ -17,21 +16,6 @@ export default function ProductLists (){
                 {active === null && (
                     <NewProductArrival />
                 )}
-                {/* {active === false && (
-                    <div>
-                        <h1>New Arrival</h1>
-                    </div>
-                )}
-                {active === true && (
-                    <div>
-                        <h1>Bestseller</h1>
-                    </div>
-                )}
-                {active === null && (
-                    <div>
-                        <h1>Featured products</h1>
-                    </div>
-                )} */}
             </main>
         </div>
     )

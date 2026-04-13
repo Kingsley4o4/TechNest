@@ -1,6 +1,6 @@
 "use client";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import ICONS from "@/data/Icons_Img";
+import ICONS, { CategoryIcon } from "@/data/Icons_Img";
 
 export default function Category() {
   return (
@@ -19,7 +19,7 @@ export default function Category() {
 
           {/* CATEGORY LIST */}
           <div className="grid grid-cols-2 lg:flex lg:justify-center gap-3 lg:gap-4 mt-10">
-            {ICONS.map(({ icon: Icon, name }, index) => {
+            {ICONS.map(({ icon: Icon, name }: CategoryIcon, index) => {
               return (
                 <div
                   key={index}

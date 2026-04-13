@@ -70,6 +70,15 @@ export default function Loading() {
           </div>
         </div>
 
+        {/* banner skeleton */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 ">
+          {Array.from({ length: 4 }).map((_, i) => (
+            <div key={i} className="bg-gray-100 rounded-lg p-4 flex items-center justify-center flex-col gap-4 lg:h-160">
+              {/* Image placeholder */}
+              <div className="bg-gray-200 animate-pulse h-40 w-full rounded-lg" />
+            </div>
+          ))}
+        </div>
       </main>
     </div>
   );

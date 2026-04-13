@@ -1,14 +1,15 @@
-// /** @type {import('next').NextConfig} */
-// const nextConfig = {
-//   /* config options here */
-// };
+import path from "path";
+import { fileURLToPath } from "url";
 
-// export default nextConfig;
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
     unoptimized: true,
+  },
+  turbopack: {
+    root: __dirname,
   },
 };
 

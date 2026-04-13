@@ -1,11 +1,16 @@
 "use client";
 import { Button } from "@/components/ui/button";
-import { useState } from "react";
+import { ReactNode, ButtonHTMLAttributes } from "react";
 import useCartStore from "@/features/cart/cartStore";
+import { Product } from "@/types";
 
-export default function BuyNowButton({ product, children, className = "", ...props }) {
-  const [loading, setLoading] = useState(false);
-  // const [quantity, setQuantity] = useState(0);
+interface BuyNowButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+  product: Product;
+  children: ReactNode;
+  className?: string;
+}
+
+export default function BuyNowButton({ product, children, className = "", ...props }: BuyNowButtonProps) {
   const addToCart = useCartStore((state) => state.addToCart);
   const removeFromCart = useCartStore((state) => state.removeFromCart);
 
@@ -16,7 +21,7 @@ export default function BuyNowButton({ product, children, className = "", ...pro
   const quantity = cartItem ? cartItem.quantity : 0;
 
   return quantity > 0 ? (
-    <div className="flex items-center gap-2 w-full mb-2">
+    <div className="flex items-center gap-2 w-full mb-2 ">
       <button
         onClick={() => removeFromCart(product.id)}
         className="bg-black text-white rounded-lg w-10 h-10 text-lg hover:bg-gray-800 flex items-center justify-center flex-shrink-0"

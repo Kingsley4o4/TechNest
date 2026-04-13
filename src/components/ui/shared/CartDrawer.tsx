@@ -6,11 +6,15 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
-import { ShoppingCart } from "lucide-react";
 import useCartStore from "@/features/cart/cartStore";
 import Image from "next/image";
+import { ReactNode } from "react";
 
-export default function CartDrawer({ children }) {
+interface CartDrawerProps {
+  children: ReactNode;
+}
+
+export default function CartDrawer({ children }: CartDrawerProps) {
   const cartItems = useCartStore((state) => state.cartItems);
 
   return (

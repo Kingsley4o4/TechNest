@@ -1,8 +1,5 @@
 import {
-  Card,
-  CardAction,
   CardContent,
-
 } from "@/components/ui/card";
 import { ShoppingCart } from "lucide-react";
 import CardProduct from "../shared/ProductCard";
@@ -10,6 +7,7 @@ import { Heart } from "lucide-react";
 import { PRODUCTS_LIST } from "@/data/Icons_Img";
 import Image from "next/image";
 import BuyNowButton from "../shared/BuyNowButton";
+
 export default function NewProductArrival() {
   return (
     <div>
@@ -47,18 +45,15 @@ export default function NewProductArrival() {
                               ${product.price}{" "}
                             </p>
 
-                            <div className="w-full pt-2 mt-auto">
+                            <div className="w-full pt-2 mt-auto px-6">
                               <BuyNowButton
                                 product={product}
-                                className="p-6 w-full cursor-pointer"
+                                className="p-6 w-full  cursor-pointer "
                               >
                                 <ShoppingCart />
                                 Add to cart
                               </BuyNowButton>
                             </div>
-
-                              
-
                           </>
                         )}
                       </div>
