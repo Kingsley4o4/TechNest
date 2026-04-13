@@ -2,22 +2,17 @@ import Image from "next/image";
 import ShopNowButton from "@/components/ui/shared/ShopNowButton";
 
 export default function Hero() {
-  const IPHONE17_IMG = { 
-   
-
-   
-   
-};
+  const IPHONE17_IMG = {};
 
   const HERO_IMGS = {
-     Hero: (
-       <Image
-      src="/assets/home/iphoneImg.png"
-      alt="iPhone 17 Pro"
-      width={400}
-      height={400}
-    />
-  ),
+    Hero: (
+      <Image
+        src="/assets/home/IphoneImg.png"
+        alt="iPhone 17 Pro"
+        width={400}
+        height={400}
+      />
+    ),
     PlayStation: (
       <Image
         src="/assets/home/hero/PlayStation.png"
