@@ -1,9 +1,9 @@
-// components/sections/Banners.tsx
+// components/sections/Banner.tsx
 import Image from "next/image";
 import { PRODUCTS_LIST } from "@/data/Icons_Img";
 import ShopNowBtn from "../shared/ShopNowButton";
 
-export default function Banners() {
+export default function Banner() {
   const bgColor = ["bg-white", "bg-[#F9F9F9]", "bg-[#EAEAEA]", "bg-[#2C2C2C]"];
 
   const bannerText = [
@@ -32,7 +32,7 @@ export default function Banners() {
                 {bannerText[index]}
               </h1>
               <p className=" text-accent-border">
-                {banner.description} iPad combines a magnificent 10.2-inch
+                {banner.description || ""} iPad combines a magnificent 10.2-inch
                 Retina display, incredible performance, multitasking and ease of
                 use.
               </p>

@@ -8,23 +8,28 @@ import {
 } from "@/components/ui/sheet";
 import useCartStore from "@/features/cart/cartStore";
 import Image from "next/image";
-import { ReactNode } from "react";
+import { ReactNode, useState, useEffect } from "react";
 
 interface CartDrawerProps {
   children: ReactNode;
 }
 
 export default function CartDrawer({ children }: CartDrawerProps) {
+  const [isMounted, setIsMounted] = useState(false);
   const cartItems = useCartStore((state) => state.cartItems);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
+  if (!isMounted) {
+    return <>{children}</>;
+  }
 
   return (
     <Sheet>
-    
-      <SheetTrigger asChild>
-        {children}
-      </SheetTrigger>
+      <SheetTrigger asChild>{children}</SheetTrigger>
 
-      
       <SheetContent className="w-full sm:max-w-md bg-white flex flex-col h-full">
         <SheetHeader className="border-b pb-4">
           <SheetTitle className="text-xl font-bold">Your Cart</SheetTitle>
@@ -38,8 +43,10 @@ export default function CartDrawer({ children }: CartDrawerProps) {
           ) : (
             <div className="space-y-4">
               {cartItems.map((item) => (
-                <div key={item.id} className="flex items-center gap-4 border-b pb-4">
-                 
+                <div
+                  key={item.id}
+                  className="flex items-center gap-4 border-b pb-4"
+                >
                   <div className="w-20 h-20 relative bg-gray-100 rounded-md">
                     <Image
                       src={item.image}
@@ -49,11 +56,16 @@ export default function CartDrawer({ children }: CartDrawerProps) {
                     />
                   </div>
 
-                  
                   <div className="flex-1">
-                    <h4 className="text-sm font-medium line-clamp-1">{item.name}</h4>
-                    <p className="text-sm font-bold text-gray-900">${item.price}</p>
-                    <p className="text-xs text-gray-500">Qty: {item.quantity}</p>
+                    <h4 className="text-sm font-medium line-clamp-1">
+                      {item.name}
+                    </h4>
+                    <p className="text-sm font-bold text-gray-900">
+                      ${item.price}
+                    </p>
+                    <p className="text-xs text-gray-500">
+                      Qty: {item.quantity}
+                    </p>
                   </div>
                 </div>
               ))}
@@ -61,13 +73,16 @@ export default function CartDrawer({ children }: CartDrawerProps) {
           )}
         </div>
 
-       
         {cartItems.length > 0 && (
           <div className="border-t pt-4 mt-auto">
             <div className="flex justify-between font-bold text-lg mb-4">
               <span>Total:</span>
               <span>
-                ${cartItems.reduce((acc, item) => acc + item.price * item.quantity, 0)}
+                $
+                {cartItems.reduce(
+                  (acc, item) => acc + item.price * item.quantity,
+                  0,
+                )}
               </span>
             </div>
             <button className="w-full bg-black text-white py-3 rounded-lg font-medium hover:bg-gray-800 transition-colors">

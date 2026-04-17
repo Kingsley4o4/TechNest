@@ -6,7 +6,7 @@ import CardProduct from "../shared/ProductCard";
 import { Heart } from "lucide-react";
 import { PRODUCTS_LIST } from "@/data/Icons_Img";
 import Image from "next/image";
-import BuyNowButton from "../shared/BuyNowButton";
+import AddtoCartBtn from "../shared/AddtoCartBtn";
 
 export default function NewProductArrival() {
   return (
@@ -45,14 +45,14 @@ export default function NewProductArrival() {
                               ${product.price}{" "}
                             </p>
 
-                            <div className="w-full pt-2 mt-auto px-6">
-                              <BuyNowButton
+                            <div className="w-full pt-2 mt-auto flex justify-center">
+                              <AddtoCartBtn
                                 product={product}
-                                className="p-6 w-full  cursor-pointer "
+                                className="p-6 cursor-pointer"
                               >
                                 <ShoppingCart />
                                 Add to cart
-                              </BuyNowButton>
+                              </AddtoCartBtn>
                             </div>
                           </>
                         )}

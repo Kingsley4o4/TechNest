@@ -23,7 +23,7 @@ export default function Category() {
               return (
                 <div
                   key={index}
-                  className="rounded-lg h-34 flex-1 lg:flex lg:w-36 flex items-center justify-center gap-2 bg-[#EDEDED] "
+                  className="rounded-lg h-34 flex-1 lg:flex lg:w-36 flex items-center justify-center gap-2 bg-[#EDEDED]"
                 >
                   <div className="flex flex-col items-center justify-center gap-5">
                     <Icon strokeWidth={1.1} size={40} />

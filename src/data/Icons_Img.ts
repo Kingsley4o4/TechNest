@@ -106,24 +106,31 @@ export const PRODUCTS_LIST: Product[] = [
 
 export const DISCOUNT_PRODUCT: Product[] = [
   {
-    id: 1,
+    id: 101,
+    name: "Apple iPhone 14 Pro 512GB Gold (MQ233)",
+    image: "/assets/home/Iphone14pro.png",
+    price: 1437,
+    category: "Smartphones",
+  },
+  {
+    id: 102,
+    name: "AirPods Max Silver Starlight Aluminium",
+    image: "/assets/home/Headphone.png",
+    price: 549,
+    category: "Headphones",
+  },
+  {
+    id: 103,
     name: "Apple Watch Series 9 GPS 41mm Starlight Aluminium",
     image: "/assets/home/smartwatch.png",
-    price: 500,
+    price: 399,
     category: "Smartwatches",
   },
   {
-    id: 2,
-    name: "Blackmagic Pocket Cinema Camera 6k",
-    image: "/assets/home/camera.png",
-    price: 300,
-    category: "Cameras",
-  },
-  {
-    id: 3,
-    name: "AirPods Max Silver Starlight Aluminium",
-    image: "/assets/home/Headphone.png",
-    price: 150,
-    category: "Headphones",
+    id: 104,
+    name: "Apple iPhone 14 Pro 1TB Gold (MQ2V3)",
+    image: "/assets/home/Iphone14pro.png",
+    price: 1499,
+    category: "Smartphones",
   },
 ];

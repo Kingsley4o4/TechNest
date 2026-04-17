@@ -2,14 +2,19 @@
 import { Heart, ShoppingCart, User, Search, MenuIcon } from "lucide-react";
 import useCartStore from "@/features/cart/cartStore";
 import CartDrawer from "@/components/ui/shared/CartDrawer";
+import { useState, useEffect } from "react";
 
 export default function NavBar() {
+  const [isMounted, setIsMounted] = useState(false);
   const cartItems = useCartStore((state) => state.cartItems);
 
-  const totalCartItems = cartItems.reduce(
-    (total, item) => total + item.quantity,
-    0,
-  );
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
+  const totalCartItems = isMounted
+    ? cartItems.reduce((total, item) => total + item.quantity, 0)
+    : 0;
 
   return (
     <div className="w-full">
@@ -42,17 +47,16 @@ export default function NavBar() {
           <div className="relative flex items-center">
             <CartDrawer>
               <div>
-              <ShoppingCart
-                className="w-5 h-5
+                <ShoppingCart
+                  className="w-5 h-5
             "
-              />
+                />
 
                 {totalCartItems > 0 && (
                   <span className="absolute -top-3 -right-3 bg-red-500 text-white rounded-full w-5 h-5 flex items-center justify-center text-xs">
                     {totalCartItems}
                   </span>
                 )}
-              
               </div>
             </CartDrawer>
           </div>
