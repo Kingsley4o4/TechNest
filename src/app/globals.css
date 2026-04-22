@@ -117,6 +117,19 @@ body {
 
 /* ── High-Level Layout Utilities ─────────────────────────── */
 @layer utilities {
+  .animate-move {
+    animation: move 15s linear infinite;
+  }
+
+  @keyframes move {
+    0% {
+      transform: translateX(100%);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+
   .main-container {
     padding-left: var(--spacing-page-x-mobile);
     padding-right: var(--spacing-page-x-mobile);

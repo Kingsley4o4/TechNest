@@ -14,6 +14,18 @@ export default function HomePage() {
   return (
     <div className="">
       <main className="">
+        <div className="bg-zinc-900 text-zinc-400 py-1.5 overflow-hidden whitespace-nowrap border-b border-zinc-800 text-[11px] uppercase tracking-[0.2em] font-medium">
+          <div className="animate-move">
+            <span className="text-red-500 mx-2">●</span> PREVIEW MODE | ACTIVE
+            DEVELOPMENT — FEATURES MAY BE LIMITED 
+            <span className="text-red-500 mx-2">●</span> PREVIEW MODE | ACTIVE
+            DEVELOPMENT — FEATURES MAY BE LIMITED 
+            <span className="text-red-500 mx-2">●</span> PREVIEW MODE | ACTIVE
+            DEVELOPMENT — FEATURES MAY BE LIMITED 
+
+          
+          </div>
+        </div>
         <Hero />
         <Category />
         <ProductLists />

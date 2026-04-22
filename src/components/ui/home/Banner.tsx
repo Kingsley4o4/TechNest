@@ -34,11 +34,11 @@ export default function Banner() {
               <p className=" text-accent-border">
                 {banner.description || ""} iPad combines a magnificent 10.2-inch
                 Retina display, incredible performance, multitasking and ease of
-                use.
+                use. 
               </p>
               <ShopNowBtn
                 className={
-                  index === bgColor.length - 1 ? "text-white" : "text-black"
+                  index === bgColor.length - 1 ? "text-white" : "text-black border-black "
                 }
               >
                 Shop Now

@@ -1,8 +1,11 @@
 "use client";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { ChevronLeft, ChevronRight, } from "lucide-react";
 import ICONS, { CategoryIcon } from "@/data/Icons_Img";
+import {useRouter} from "next/navigation";
+import Link from "next/link"
 
 export default function Category() {
+  const router = useRouter();
   return (
     <div className="pt-10 bg-[#F5F5F5] lg:py-16">
       <main>
@@ -19,17 +22,17 @@ export default function Category() {
 
           {/* CATEGORY LIST */}
           <div className="grid grid-cols-2 lg:flex lg:justify-center gap-3 lg:gap-4 mt-10">
-            {ICONS.map(({ icon: Icon, name }: CategoryIcon, index) => {
+            {ICONS.map(({ icon: Icon, name , path  }: CategoryIcon, index) => {
               return (
-                <div
+                <Link href={path}
                   key={index}
-                  className="rounded-lg h-34 flex-1 lg:flex lg:w-36 flex items-center justify-center gap-2 bg-[#EDEDED]"
+                  className="rounded-lg h-34 flex-1 lg:flex lg:w-36 flex items-center justify-center gap-2 bg-[#EDEDED]  cursor-pointer"
                 >
-                  <div className="flex flex-col items-center justify-center gap-5">
+                  <div className="flex flex-col items-center justify-center gap-5 ">
                     <Icon strokeWidth={1.1} size={40} />
                     <span className="text-sm">{name}</span>
                   </div>
-                </div>
+                </Link>
               );
             })}
           </div>

@@ -12,31 +12,34 @@ import { Product } from "@/types";
 export interface CategoryIcon {
   icon: LucideIcon;
   name: string;
+  path : string;
 }
 
 // ICONS contains icon and the name of the category
 export const ICONS: CategoryIcon[] = [
   {
+    path: "/smartphones",
     icon: Smartphone,
     name: "Smartphones",
   },
-  {
+  { path: "/watches",
     icon: Watch,
     name: "Smartwatches",
   },
   {
+    path: "/cameras",
     icon: Camera,
     name: "Cameras",
   },
-  {
+  { path: "/headphones",
     icon: Headphones,
     name: "Headphones",
   },
-  {
+  {path: "/monitors",
     icon: MonitorStop,
     name: "Monitors",
   },
-  {
+  {path: "/gamepads",
     icon: Gamepad2,
     name: "Gaming",
   },

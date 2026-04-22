@@ -1,15 +1,18 @@
+
+
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
 import { Product, CartItem } from "@/types";
-import { useState, useEffect } from "react";
 
 interface CartState {
   cartItems: CartItem[];
+  wishlist: (string | number)[];
 }
 
 interface CartActions {
   addToCart: (product: Product) => void;
   removeFromCart: (productId: string | number) => void;
+  toggleWishlist: (productId: string | number) => void;
 }
 
 type CartStore = CartState & CartActions;
@@ -18,6 +21,7 @@ const useCartStore = create<CartStore>()(
   persist(
     (set) => ({
       cartItems: [],
+      wishlist: [],
 
       addToCart: (product) =>
         set((state) => {
@@ -60,6 +64,19 @@ const useCartStore = create<CartStore>()(
                 ? { ...item, quantity: item.quantity - 1 }
                 : item,
             ),
+          };
+        }),
+
+      toggleWishlist: (productId) =>
+        set((state) => {
+          const isInWishlist = state.wishlist.includes(productId);
+          if (isInWishlist) {
+            return {
+              wishlist: state.wishlist.filter((id) => id !== productId),
+            };
+          }
+          return {
+            wishlist: [...state.wishlist, productId],
           };
         }),
     }),

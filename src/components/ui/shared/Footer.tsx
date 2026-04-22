@@ -9,7 +9,7 @@ export default function Footer() {
           <div className="md:col-span-4 flex flex-col items-center text-center md:items-start md:text-left">
             <h2 className="text-3xl font-bold mb-6 tracking-tight">cyber</h2>
             <p className="text-[#919191] text-[14px] leading-relaxed max-w-75">
-              We are a residential interior design firm located in Portland. Our
+              We are a residential interior design firm located in Nigeria. Our
               boutique-studio offers more than
             </p>
             {/* Social Icons for Desktop */}

@@ -3,9 +3,18 @@ import Image from "next/image";
 
 export default function SummerSaleBanner() {
   return (
-    <div className="w-full h-150 md:h-110 relative overflow-hidden bg-linear-to-r from-[#211C24] via-[#211C24] to-[#211C24]">
-      {/* Background Decorative Images for Mobile - Stacked */}
-      <div className="absolute top-0 left-0 w-full h-full md:hidden">
+    <div className="w-full h-150 md:h-110 relative overflow-hidden bg-[#211C24]">
+      {/* Background Banner Image */}
+      <Image
+        className="object-cover md:object-center"
+        src="/assets/home/BannerImg.png"
+        fill
+        alt="bannerimg"
+        priority
+      />
+
+      {/* Background Decorative Images for Mobile - Positioned in corners */}
+      <div className="absolute top-0 left-0 w-full h-full md:hidden pointer-events-none">
         {/* Top Left - Tablet */}
         <div className="absolute -top-10 -left-10 w-48 h-48 opacity-80 rotate-[-15deg]">
           <Image
@@ -57,7 +66,7 @@ export default function SummerSaleBanner() {
       </div>
 
       {/* Desktop Decorative Images */}
-      <div className="hidden md:block">
+      <div className="hidden md:block pointer-events-none">
         <div className="absolute -left-25 top-1/2 -translate-y-1/2 opacity-100">
           <Image
             src="/assets/home/ipad.png"

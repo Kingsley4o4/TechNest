@@ -47,7 +47,7 @@ export default function AddtoCartBtn({
     return (
       <Button
         key="not-mounted"
-        className={`${className} text-white hover:bg-black hover:text-white`}
+        className={`${className} text-white hover:bg-black hover:text-white `}
         {...props}
       >
         {children}
@@ -58,7 +58,7 @@ export default function AddtoCartBtn({
   return quantity > 0 ? (
     <div
       key="mounted-quantity"
-      className="flex items-center gap-2 w-full mb-2 "
+      className="flex items-center gap-2 w-full mb-2"
     >
       <button
         onClick={handleRemoveFromCart}
